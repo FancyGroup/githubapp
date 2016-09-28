@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "page/page1/page1",
+    "page/page2/page2"
+  ],
+  "window": {
+    "navigationBarTextStyle": "#fbf9fe",
+    "navigationBarTitleText": "GithupWechatApp",
+    "navigationBarBackgroundColor": "#fbf9fe",
+    "backgroundColor": "#fbf9fe"
+  },
+  "tabBar": {
+    "color": "#dddddd",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [{
+      "pagePath": "page/page1/page1",
+      "iconPath": "image/wechat.png",
+      "selectedIconPath": "image/wechatHL.png",
+      "text": "Tab1"
+    }, {
+      "pagePath": "page/page2/page2",
+      "iconPath": "image/wechat.png",
+      "selectedIconPath": "image/wechatHL.png",
+      "text": "Tab2"
+    }]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}
