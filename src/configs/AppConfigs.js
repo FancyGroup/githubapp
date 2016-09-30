@@ -5,7 +5,7 @@
 var AppConfigs = (function () {
     function AppConfigs() {
         this.globals = {
-            hasLogin: false
+            hasLogin: false,
         };
     }
     AppConfigs.prototype.onLaunch = function () {
@@ -19,6 +19,5 @@ var AppConfigs = (function () {
     };
     return AppConfigs;
 }());
-
-
-module.exports = {default:AppConfigs}
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = AppConfigs;

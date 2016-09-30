@@ -851,7 +851,7 @@ interface IPageConfigs<T> {
     setData?: (obj: T)=>void;
 }
 
-declare function Page(obj: IPageConfigs): void;
+declare function Page<T>(obj: IPageConfigs<T>): void;
 /*全局的getApp()函数，可以获取到小程序实例 */
 declare function getApp(): {
     /**用户获取当前页面的实例。 */

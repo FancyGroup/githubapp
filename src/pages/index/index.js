@@ -1,30 +1,29 @@
-//index.js
-//获取应用实例
-Page({
-    data: {
-        motto: 'Hello World',
-        userInfo: {}
-    },
-    //事件处理函数
-    bindViewTap: function () {
-        wx.navigateTo({
-            url: '../logs/logs'
-        })
-    },
-    onLoad: function () {
-        console.log('onLoad')
-        var that = this
-        //调用应用实例的方法获取全局数据
+/**
+ * Created by allen on 2016/9/29 0029.
+ */
+var Index = (function () {
+    function Index() {
+        this.data = {
+            motto: 'Hello World1',
+            userInfo: {}
+        };
+    }
+    Index.prototype.bindViewTap = function () {
+    };
+    Index.prototype.onLoad = function () {
+        var that = this;
         wx.login({
             success: function () {
                 wx.getUserInfo({
                     success: function (res) {
                         that.setData({
                             userInfo: res.userInfo
-                        })
+                        });
                     }
-                })
+                });
             }
         });
-    }
-})
+    };
+    return Index;
+}());
+Page(new Index());
