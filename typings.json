@@ -1,0 +1,11 @@
+{
+  "name": "quickstart",
+  "dependencies": {},
+  "globalDependencies": {
+    "gulp": "registry:dt/gulp#3.8.0+20160907112908",
+    "node": "registry:dt/node#6.0.0+20160928143418",
+    "orchestrator": "registry:dt/orchestrator#0.0.0+20160316155526",
+    "q": "registry:dt/q#0.0.0+20160613154756",
+    "vinyl": "registry:dt/vinyl#1.2.0+20160924121322"
+  }
+}

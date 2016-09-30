@@ -1,0 +1,95 @@
+@import "../../public/css/main";
+
+$index: "index";
+
+.#{$index} {
+  @include flex-column();
+  @include flex-hc();
+
+  &-bg {
+    width: 100%;
+    height: 180px;
+    background-color: #000;
+    position: absolute;
+    opacity: 0.7;
+  }
+
+  &-wallpaper {
+    background-color: transparent;
+  }
+
+  &-header {
+    margin-top: 180-64px;
+    z-index: 10;
+    &-img {
+      height: 128px;
+      width: 128px;
+      border: 2px solid #fff;
+      background-color: #88acdb;
+      border-radius: 50%;
+    }
+  }
+  &-main {
+    text-align: center;
+  }
+  &-username {
+    display: block;
+    color: #444;
+    font-size: 30px;
+    height: 80px;
+    @include flex-column();
+    @include flex-hvc();
+  }
+  &-motto {
+    display: block;
+    color: #999;
+    text-overflow: ellipsis;
+    line-height: 25px;
+    font-size: 16px;
+  }
+  &-home-wrapper {
+    margin-top: 10px;
+    height: 60px;
+    @include flex-column();
+    @include flex-hvc();
+  }
+  &-home {
+    height: 32px;
+    width: 32px;
+    background: #cecece;
+    border-radius: 50%;
+    @include flex-column();
+    @include flex-hvc();
+  }
+  &-home-ic {
+    width: 24px;
+    height: 24px;
+  }
+  &-nav {
+    color: #444;
+    font-size: 16px;
+    line-height: 2;
+    height: 140px;
+    @include flex-column();
+    @include flex-hvc();
+  }
+  &-social {
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+  &-social-wrapper {
+    height: 32px;
+    width: 32px;
+    background: #cecece;
+    border-radius: 50%;
+    @include flex-column();
+    @include flex-hvc();
+  }
+  &-social-ic {
+    width: 24px;
+    height: 24px;
+  }
+}
