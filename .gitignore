@@ -84,3 +84,8 @@ jspm_packages
 .node_repl_history
 ### VisualStudioCode template
 .vscode
+.idea/encodings.xml
+.idea/githubapp.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/typescript-compiler.xml
