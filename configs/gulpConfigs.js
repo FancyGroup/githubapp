@@ -39,7 +39,7 @@ function ts2js(preprocessOpts) {
         });
         var exportString = "";
         if (!isObjectEmpty(exportObject)) {
-            exportString = "module.exports = " + object2String(exportObject);
+            exportString = "module.exports = " + object2String(exportObject) + ";";
         }
         file.contents = new Buffer(result + exportString);
         this.push(file);

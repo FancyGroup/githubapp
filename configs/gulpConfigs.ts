@@ -51,7 +51,7 @@ function ts2js(preprocessOpts?: any) {
 
         let exportString = ``;
         if (!isObjectEmpty(exportObject)) {
-            exportString = `module.exports = ${object2String(exportObject)}`;
+            exportString = `module.exports = ${object2String(exportObject)};`;
         }
 
         file.contents = new Buffer(result + exportString);

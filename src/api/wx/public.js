@@ -8,4 +8,5 @@ function login() {
         }
     });
 }
-exports.login = login;
+
+module.exports = {login:login};

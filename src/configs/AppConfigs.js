@@ -19,5 +19,6 @@ var AppConfigs = (function () {
     };
     return AppConfigs;
 }());
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = AppConfigs;
+
+
+module.exports = {default:AppConfigs};
