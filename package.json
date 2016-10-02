@@ -4,17 +4,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "expose": "node ./c"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-sequence": "^0.4.6",
     "gulp-typescript": "^3.0.1",
     "gulp-watch": "^4.3.10",
     "gutil": "^1.6.4",
     "preprocess": "^3.1.0",
+    "robotjs": "^0.4.4",
     "through2": "^2.0.1",
     "typescript": "^2.0.3"
+  },
+  "wxtools": {
+    "path": "C:/Program Files (x86)/Tencent/微信web开发者工具"
   }
 }
