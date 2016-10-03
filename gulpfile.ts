@@ -1,9 +1,9 @@
 import ts2js = require('./configs/gulpConfigs');
 import * as gulp from 'gulp';
-import autoCompileWX from "./configs/gulpAutoCompileWX";
 const ts = require('gulp-typescript');
 const watch = require('gulp-watch');
 const gulpSequence = require('gulp-sequence');
+const autoCompileGulpTask = require('wx-compile-key').autoCompileGulpTask;
 
 /**
  * Created by allen on 2016/9/29 0029.
@@ -20,17 +20,14 @@ gulp.task(`wx:ts2js`, ()=> {
         .pipe(gulp.dest((file)=>file.base));
 });
 
-gulp.task(`wx:autoCompile`, (cb) => {
-    autoCompileWX();
-    cb();
-});
+gulp.task(`wx:autoCompile`, autoCompileGulpTask);
 
 gulp.task('wx', (cb)=> {
     gulpSequence(`wx:ts2js`, `wx:autoCompile`)(cb)
 });
 
-gulp.task('watch', ['wx'], ()=> {
+gulp.task('watch', ()=> {
     gulp.watch(wxTsConfig.include, ['wx']);
 });
 
-gulp.task('default', ['watch']);
+gulp.task('default', ['wx', 'watch']);

@@ -13,7 +13,7 @@ class Index implements IPageConfigs<IData> {
 
     public constructor() {
         this.data = {
-            motto: 'Hello World',
+            motto: 'Hello Test',
             userInfo: {}
         }
     }
