@@ -31,7 +31,6 @@ function ts2js(preprocessOpts) {
         var content = pp.preprocess(file.contents.toString(), preprocessOpts || {});
         var exportObject = {};
         var result = content
-            .replace(/(require\(.*)(\.js|\.ts|\.json)?(['|"]\);$)/igm, "$1.js$3")
             .replace('Object.defineProperty(exports, "__esModule", { value: true });', '')
             .replace(/\bexports\..*/igm, function (result) {
             append2Object(exportObject, result);

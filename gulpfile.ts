@@ -11,19 +11,26 @@ const autoCompileGulpTask = require('wx-compile-key').autoCompileGulpTask;
 
 const wxTsConfig = require('./tsconfig.wx.json');
 const tsProject = ts.createProject('tsconfig.wx.json');
-
+const browserify = require('gulp-browserify');
 
 gulp.task(`wx:ts2js`, ()=> {
     const tsResult = tsProject.src().pipe(tsProject());
     return tsResult.js
         .pipe(ts2js())
+
+});
+
+gulp.task('wx:browserify', ()=> {
+    return gulp.src("src/**/*.js")
+        .pipe(browserify())
         .pipe(gulp.dest((file)=>file.base));
 });
+
 
 gulp.task(`wx:autoCompile`, autoCompileGulpTask);
 
 gulp.task('wx', (cb)=> {
-    gulpSequence(`wx:ts2js`, `wx:autoCompile`)(cb)
+    gulpSequence(`wx:ts2js`, `wx:browserify`, `wx:autoCompile`)(cb)
 });
 
 gulp.task('watch', ()=> {

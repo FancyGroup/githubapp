@@ -1,0 +1,3 @@
+<view class="splash">
+    <image class="splash-img" animation="{{splashAnimation}}" src="../../public/images/splash.png"></image>
+</view>

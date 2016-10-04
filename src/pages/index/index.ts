@@ -2,7 +2,6 @@
  * Created by allen on 2016/9/29 0029.
  */
 
-
 interface IData {
     motto: string;
     userInfo: Object;
