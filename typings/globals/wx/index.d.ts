@@ -564,7 +564,7 @@ declare module  wx {
         skewY(ay: any): animation;
         matrix(a: any, b: any, c: any, d: any, tx: any, ty: any): animation;
         matrix3D(a1, b1, c1, d1, a2, b2, c2, d2, a3, b3, c3, d3, a4, b4, c4, d4): animation;
-        step(obj: {
+        step(obj?: {
             /**动画持续时间，单位ms，默认值 400 */
             duration?: number;
             /** 定义动画的效果，默认值"linear"，有效值："linear","ease","ease-in","ease-in-out","ease-out","step-start","step-end"*/

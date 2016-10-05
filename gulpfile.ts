@@ -17,15 +17,14 @@ gulp.task(`wx:ts2js`, ()=> {
     const tsResult = tsProject.src().pipe(tsProject());
     return tsResult.js
         .pipe(ts2js())
-
-});
-
-gulp.task('wx:browserify', ()=> {
-    return gulp.src("src/**/*.js")
-        .pipe(browserify())
         .pipe(gulp.dest((file)=>file.base));
 });
 
+gulp.task('wx:browserify', ()=> {
+    return gulp.src("src/npm/index.js")
+        .pipe(browserify())
+        .pipe(gulp.dest((file)=>file.base));
+});
 
 gulp.task(`wx:autoCompile`, autoCompileGulpTask);
 

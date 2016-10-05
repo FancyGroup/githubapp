@@ -14,7 +14,7 @@ class Index implements IPageConfigs<IData> {
         this.data = {
             motto: 'Hello Test',
             userInfo: {}
-        }
+        } as IData
     }
 
     public bindViewTap() {

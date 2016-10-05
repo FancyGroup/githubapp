@@ -42,7 +42,7 @@ function ts2js(preprocessOpts?:any) {
 
         let exportObject:IExportObject = {};
         const result = content
-        // .replace(/(require\(.*)(\.js|\.ts|\.json)?(['|"]\);$)/igm, `$1.js$3`)
+            .replace(/(require\(['|"]\..*)(\.js|\.ts|\.json)?(['|"]\);$)/igm, `$1.js$3`)
             .replace('Object.defineProperty(exports, "__esModule", { value: true });', '')
             .replace(/\bexports\..*/igm, function (result) {
                 append2Object(exportObject, result);
