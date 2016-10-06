@@ -3,12 +3,12 @@
  */
 
 interface IData {
-    motto: string;
-    userInfo: Object;
+    motto:string;
+    userInfo:Object;
 }
 
 class Index implements IPageConfigs<IData> {
-    public data: IData;
+    public data:IData;
 
     public constructor() {
         this.data = {
@@ -21,7 +21,7 @@ class Index implements IPageConfigs<IData> {
     }
 
     public onLoad() {
-        var that: IPageConfigs<IData> = this;
+        var that:IPageConfigs<IData> = this;
         wx.login({
             success: function () {
                 wx.getUserInfo({

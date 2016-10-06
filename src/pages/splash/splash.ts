@@ -1,6 +1,5 @@
 import animation = wx.animation;
-import {login} from "../../api/github/index";
-import {Github} from "../../npm/index";
+import {Github} from '../../npm/index';
 interface IData {
     splashAnimation:any
 }
@@ -10,10 +9,11 @@ class Splash implements IPageConfigs<IData> {
 
     public constructor() {
         this.data = {
-            splashAnimation: null
+            splashAnimation: {}
         } as IData;
-        new Github({username: 'jf3096', password: 'asdf123'}).getUser().listStarredRepos()
+        new Github({username: 'jf3096', password: 'asdf1234'}).getUser().listStarredRepos()
             .then(function ({data: reposJson}) {
+                debugger;
                 console.log(`clayreimann has ${reposJson.length} repos!`);
             });
     }
@@ -21,7 +21,6 @@ class Splash implements IPageConfigs<IData> {
     public onShow() {
         const self = this;
         setTimeout(()=> {
-            console.log(123);
             const animation = wx.createAnimation({
                 duration: 10000,
                 timingFunction: 'ease-out',

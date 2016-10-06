@@ -1,5 +1,6 @@
 import ts2js = require('./configs/gulpConfigs');
 import * as gulp from 'gulp';
+import stripModule from './configs/stripModule';
 const ts = require('gulp-typescript');
 const watch = require('gulp-watch');
 const gulpSequence = require('gulp-sequence');
@@ -23,6 +24,7 @@ gulp.task(`wx:ts2js`, ()=> {
 gulp.task('wx:browserify', ()=> {
     return gulp.src("src/npm/index.js")
         .pipe(browserify())
+        .pipe(stripModule())
         .pipe(gulp.dest((file)=>file.base));
 });
 

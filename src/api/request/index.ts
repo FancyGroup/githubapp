@@ -1,6 +1,6 @@
 type MethodType = 'GET' | 'POST';
 
-function request(url:string, method:MethodType, data:Object) {
+function request(url: string, method: MethodType, data: Object) {
     return new Promise((resolve, reject)=> {
         wx.request({
             url,

@@ -1,1 +1,1 @@
-export const Github = require('github-api');
+export {Github} from './github/index';
