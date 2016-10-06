@@ -1,0 +1,14 @@
+@import "../../public/css/main";
+
+$splash: "splash";
+
+.#{$splash} {
+  @include flex-column();
+  @include flex-hvc();
+  height: 100%;
+  background-color: #56abe4;
+  &-img {
+    width: 220px;
+    height: 220px;
+  }
+}

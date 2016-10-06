@@ -4,7 +4,7 @@
 var Index = (function () {
     function Index() {
         this.data = {
-            motto: 'Hello World',
+            motto: 'Hello Test',
             userInfo: {}
         };
     }

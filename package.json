@@ -4,17 +4,29 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "wx-compile-key",
+    "wx-compile-key": "node node_modules/wx-compile-key/bin/index.js"
   },
-  "author": "",
+  "author": "Ailun She",
   "license": "ISC",
   "devDependencies": {
+    "github-api": "^2.3.0",
     "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-sequence": "^0.4.6",
     "gulp-typescript": "^3.0.1",
     "gulp-watch": "^4.3.10",
     "gutil": "^1.6.4",
+    "module-inlinify": "^1.0.1",
     "preprocess": "^3.1.0",
     "through2": "^2.0.1",
-    "typescript": "^2.0.3"
+    "typescript": "^2.0.3",
+    "wx-compile-key": "^1.0.1-beta.2"
+  },
+  "dependencies": {
+    "whatwg-fetch": "^1.0.0"
+  },
+  "module-inlinify": {
+    "include": "*.inline.js"
   }
 }

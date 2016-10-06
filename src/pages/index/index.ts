@@ -2,7 +2,6 @@
  * Created by allen on 2016/9/29 0029.
  */
 
-
 interface IData {
     motto: string;
     userInfo: Object;
@@ -13,9 +12,9 @@ class Index implements IPageConfigs<IData> {
 
     public constructor() {
         this.data = {
-            motto: 'Hello World',
+            motto: 'Hello Test',
             userInfo: {}
-        }
+        } as IData
     }
 
     public bindViewTap() {
