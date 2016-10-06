@@ -1,16 +1,15 @@
-/**
- * Created by allen on 2016/9/29 0029.
- */
+import {PageConfigs} from "../../api/wx/public";
 
 interface IData {
     motto:string;
     userInfo:Object;
 }
 
-class Index implements IPageConfigs<IData> {
+class Index extends PageConfigs<IData> implements IPageConfigs<IData> {
     public data:IData;
 
     public constructor() {
+        super();
         this.data = {
             motto: 'Hello Test',
             userInfo: {}
@@ -21,12 +20,12 @@ class Index implements IPageConfigs<IData> {
     }
 
     public onLoad() {
-        var that:IPageConfigs<IData> = this;
+        var self = this;
         wx.login({
             success: function () {
                 wx.getUserInfo({
                     success: function (res) {
-                        that.setData({
+                        self.setData({
                             userInfo: res.userInfo
                         } as IData)
                     }

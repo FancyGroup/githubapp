@@ -9,3 +9,8 @@ export function login() {
         }
     });
 }
+
+export class PageConfigs<T> {
+    /**更新同步数据 */
+    setData: (obj: T)=>void;
+}

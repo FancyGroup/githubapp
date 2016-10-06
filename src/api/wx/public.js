@@ -9,4 +9,10 @@ function login() {
     });
 }
 
-module.exports = {login:login};
+var PageConfigs = (function () {
+    function PageConfigs() {
+    }
+    return PageConfigs;
+}());
+
+module.exports = {login:login,PageConfigs:PageConfigs};
