@@ -11,7 +11,7 @@ class Splash implements IPageConfigs<IData> {
         this.data = {
             splashAnimation: {}
         } as IData;
-        new Github({username: 'jf3096', password: 'asdf1234'}).getUser().listStarredRepos()
+        new Github({username: 'xxxx', password: 'xxxxx'}).getUser().listStarredRepos()
             .then(function ({data: reposJson}) {
                 debugger;
                 console.log(`clayreimann has ${reposJson.length} repos!`);
