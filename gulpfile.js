@@ -29,7 +29,7 @@ gulp.task('wx:browserify', function () {
 });
 gulp.task("wx:autoCompile", autoCompileGulpTask);
 gulp.task('wx', function (cb) {
-    gulpSequence("wx:ts2js", "wx:browserify", "wx:autoCompile")(cb);
+    gulpSequence("wx:ts2js", "wx:browserify")(cb);
 });
 gulp.task('sass', function () {
     return gulp.src(SASS_SRC)
@@ -38,7 +38,7 @@ gulp.task('sass', function () {
         .pipe(gulp.dest(function (file) { return file.base; }));
 });
 gulp.task('watch', function () {
-    gulp.watch(wxTsConfig.include, ['wx']);
-    gulp.watch(SASS_SRC, ['sass']);
+    gulp.watch(wxTsConfig.include, ["wx", "wx:autoCompile"]);
+    gulp.watch(SASS_SRC, ["sass", "wx:autoCompile"]);
 });
 gulp.task('default', ['wx', 'watch']);

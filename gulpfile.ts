@@ -34,7 +34,7 @@ gulp.task('wx:browserify', ()=> {
 gulp.task(`wx:autoCompile`, autoCompileGulpTask);
 
 gulp.task('wx', (cb)=> {
-    gulpSequence(`wx:ts2js`, `wx:browserify`, `wx:autoCompile`)(cb)
+    gulpSequence(`wx:ts2js`, `wx:browserify`)(cb)
 });
 
 gulp.task('sass', function () {
@@ -45,8 +45,8 @@ gulp.task('sass', function () {
 });
 
 gulp.task('watch', ()=> {
-    gulp.watch(wxTsConfig.include, ['wx']);
-    gulp.watch(SASS_SRC, ['sass']);
+    gulp.watch(wxTsConfig.include, [`wx`, `wx:autoCompile`]);
+    gulp.watch(SASS_SRC, [`sass`, `wx:autoCompile`]);
 });
 
 gulp.task('default', ['wx', 'watch']);

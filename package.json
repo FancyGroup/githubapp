@@ -27,7 +27,8 @@
     "wx-compile-key": "^1.0.3"
   },
   "dependencies": {
-    "es6-promise": "^4.0.5"
+    "es6-promise": "^4.0.5",
+    "labrador": "^0.2.3"
   },
   "module-inlinify": {
     "include": "*.inline.js"

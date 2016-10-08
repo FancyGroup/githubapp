@@ -1,16 +1,16 @@
 function request(url, method, data) {
-    return new Promise(function (resolve, reject) {
+    return new Promise((resolve, reject) => {
         wx.request({
-            url: url,
-            data: data,
-            method: method,
+            url,
+            data,
+            method,
             header: {
                 'Content-Type': 'application/json'
             },
-            success: function (res) {
+            success: (res) => {
                 resolve(res);
             },
-            fail: function (err) {
+            fail: (err) => {
                 reject(err);
             }
         });

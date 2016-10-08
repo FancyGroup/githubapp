@@ -1,14 +1,16 @@
 import animation = wx.animation;
 import {Github} from '../../npm/index';
+import PageConfigs from '../../utils/PageConfigs';
 
 interface IData {
-    splashAnimation:animation
+    splashAnimation: animation
 }
 
-class Splash implements IPageConfigs<IData> {
-    public data:IData;
+class Splash extends PageConfigs<IData> {
+    public data: IData;
 
     public constructor() {
+        super();
         this.data = {
             splashAnimation: {} as animation
         };

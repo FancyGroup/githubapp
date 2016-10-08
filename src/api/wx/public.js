@@ -4,7 +4,7 @@
 "use strict";
 function login() {
     wx.login({
-        success: function () {
+        success: () => {
         }
     });
 }

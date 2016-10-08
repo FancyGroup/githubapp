@@ -1,16 +1,17 @@
-/**
- * Created by allen on 2016/9/29 0029.
- */
-var Index = (function () {
-    function Index() {
+"use strict";
+const PageConfigs_1 = require('../../utils/PageConfigs.js');
+class Index extends PageConfigs_1.default {
+    constructor() {
+        super();
         this.data = {
             motto: 'Hello Test',
             userInfo: {}
         };
     }
-    Index.prototype.bindViewTap = function () {
-    };
-    Index.prototype.onLoad = function () {
+    bindViewTap() {
+    }
+    onLoad() {
+        super.onLoad();
         var that = this;
         wx.login({
             success: function () {
@@ -23,7 +24,6 @@ var Index = (function () {
                 });
             }
         });
-    };
-    return Index;
-}());
+    }
+}
 Page(new Index());
