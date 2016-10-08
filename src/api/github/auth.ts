@@ -1,2 +1,4 @@
 import {login} from './index';
-export const auth = login('', '').getUser();
+import account from './account';
+const {username, password} = account;
+export const auth = login(username, password).getUser();
