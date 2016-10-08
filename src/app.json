@@ -1,5 +1,8 @@
 {
   "pages": [
+    "pages/splash/splash",
+    "pages/repositories/repositories",
+    "pages/index/index",
     "pages/profile/profile"
   ],
   "window": {

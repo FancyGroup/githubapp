@@ -852,7 +852,8 @@ interface IPageConfigs<T> {
     /**生命周期函数--监听页面卸载 */
     onUnload?: Function;
     /**更新同步数据 */
-    setData?: (obj: T)=>void;
+    //Ken 2016-10-07 00:01 move to ws/public.ts
+    // setData?: (obj: T)=>void;
 }
 
 declare function Page<T>(obj: IPageConfigs<T>): void;

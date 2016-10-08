@@ -1,34 +1,33 @@
 import animation = wx.animation;
 import {Github} from '../../npm/index';
-import PageConfigs from '../../utils/PageConfigs';
-
 interface IData {
-    splashAnimation: animation
+    splashAnimation:any
 }
 
-class Splash extends PageConfigs<IData> {
-    public data: IData;
+class Splash implements IPageConfigs<IData> {
+    public data:IData;
 
     public constructor() {
-        super();
         this.data = {
-            splashAnimation: {} as animation
-        };
-        new Github({username: 'jf3096', password: 'asdf369547892'}).getUser().listStarredRepos()
+            splashAnimation: {}
+        } as IData;
+        new Github({username: 'xxxx', password: 'xxxxx'}).getUser().listStarredRepos()
             .then(function ({data: reposJson}) {
+                debugger;
                 console.log(`clayreimann has ${reposJson.length} repos!`);
             });
     }
 
     public onShow() {
+        const self = this;
         setTimeout(()=> {
             const animation = wx.createAnimation({
                 duration: 10000,
                 timingFunction: 'ease-out',
             });
             animation.scale(1.5, 1.5).step();
-            (this as IPageConfigs<IData>).setData({
-                splashAnimation: animation.export()
+            self.setData({
+                splashAnimation: animation.export() as animation
             });
         }, 500);
     }
