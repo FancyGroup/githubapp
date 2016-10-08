@@ -5,6 +5,8 @@ const ts = require('gulp-typescript');
 const watch = require('gulp-watch');
 const gulpSequence = require('gulp-sequence');
 const autoCompileGulpTask = require('wx-compile-key').autoCompileGulpTask;
+const sass = require('gulp-sass');
+const extReplace = require('gulp-ext-replace');
 
 /**
  * Created by allen on 2016/9/29 0029.
@@ -13,6 +15,7 @@ const autoCompileGulpTask = require('wx-compile-key').autoCompileGulpTask;
 const wxTsConfig = require('./tsconfig.wx.json');
 const tsProject = ts.createProject('tsconfig.wx.json');
 const browserify = require('gulp-browserify');
+const SASS_SRC = 'src/**/*.scss';
 
 gulp.task(`wx:ts2js`, ()=> {
     const tsResult = tsProject.src().pipe(tsProject());
@@ -34,8 +37,16 @@ gulp.task('wx', (cb)=> {
     gulpSequence(`wx:ts2js`, `wx:browserify`, `wx:autoCompile`)(cb)
 });
 
+gulp.task('sass', function () {
+    return gulp.src(SASS_SRC)
+        .pipe(sass().on('error', sass.logError))
+        .pipe(extReplace('.wxss'))
+        .pipe(gulp.dest((file)=>file.base));
+});
+
 gulp.task('watch', ()=> {
     gulp.watch(wxTsConfig.include, ['wx']);
+    gulp.watch(SASS_SRC, ['sass']);
 });
 
 gulp.task('default', ['wx', 'watch']);

@@ -6,12 +6,15 @@ var ts = require('gulp-typescript');
 var watch = require('gulp-watch');
 var gulpSequence = require('gulp-sequence');
 var autoCompileGulpTask = require('wx-compile-key').autoCompileGulpTask;
+var sass = require('gulp-sass');
+var extReplace = require('gulp-ext-replace');
 /**
  * Created by allen on 2016/9/29 0029.
  */
 var wxTsConfig = require('./tsconfig.wx.json');
 var tsProject = ts.createProject('tsconfig.wx.json');
 var browserify = require('gulp-browserify');
+var SASS_SRC = 'src/**/*.scss';
 gulp.task("wx:ts2js", function () {
     var tsResult = tsProject.src().pipe(tsProject());
     return tsResult.js
@@ -28,7 +31,14 @@ gulp.task("wx:autoCompile", autoCompileGulpTask);
 gulp.task('wx', function (cb) {
     gulpSequence("wx:ts2js", "wx:browserify", "wx:autoCompile")(cb);
 });
+gulp.task('sass', function () {
+    return gulp.src(SASS_SRC)
+        .pipe(sass().on('error', sass.logError))
+        .pipe(extReplace('.wxss'))
+        .pipe(gulp.dest(function (file) { return file.base; }));
+});
 gulp.task('watch', function () {
     gulp.watch(wxTsConfig.include, ['wx']);
+    gulp.watch(SASS_SRC, ['sass']);
 });
 gulp.task('default', ['wx', 'watch']);

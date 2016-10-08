@@ -44,7 +44,6 @@ function formatNumber(n) {
 module.exports = {
   formatTime: formatTime
 }
-
 },{}]},{},[1])
 },{}]},{},[1])
 },{}]},{},[1])

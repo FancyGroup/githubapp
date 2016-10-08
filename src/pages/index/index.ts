@@ -18,6 +18,7 @@ class Index implements IPageConfigs<IData> {
     }
 
     public bindViewTap() {
+
     }
 
     public onLoad() {

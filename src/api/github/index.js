@@ -7,4 +7,16 @@ function login(username, password) {
     });
 }
 
-module.exports = {login:login};
+function getProfile(auth) {
+    return new Promise(function (resolve, reject) {
+        auth.getProfile(function (err, user, request) {
+            if (err) {
+                reject(err);
+                return;
+            }
+            resolve(user);
+        });
+    });
+}
+
+module.exports = {login:login,getProfile:getProfile};

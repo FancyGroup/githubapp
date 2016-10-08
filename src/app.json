@@ -1,7 +1,6 @@
 {
   "pages": [
-    "pages/splash/splash",
-    "pages/index/index"
+    "pages/profile/profile"
   ],
   "window": {
     "backgroundTextStyle": "light",
