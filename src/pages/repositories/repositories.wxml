@@ -1,0 +1,3 @@
+<view class='setting'>
+    <span class="fa fa-flag" style="font-size: 40px">flag</span>
+</view>

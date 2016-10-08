@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/repositories/repositories",
     "pages/splash/splash",
     "pages/index/index"
   ],
