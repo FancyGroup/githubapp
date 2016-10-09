@@ -14,7 +14,6 @@
     "gulp": "^3.9.1",
     "gulp-browserify": "^0.5.1",
     "gulp-ext-replace": "^0.3.0",
-    "gulp-sass": "^2.3.2",
     "gulp-sequence": "^0.4.6",
     "gulp-typescript": "^3.0.1",
     "gulp-watch": "^4.3.10",
