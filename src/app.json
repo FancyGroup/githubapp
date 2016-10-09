@@ -1,8 +1,9 @@
 {
   "pages": [
-    "pages/repositories/repositories",
     "pages/splash/splash",
-    "pages/index/index"
+    "pages/repositories/repositories",
+    "pages/index/index",
+    "pages/profile/profile"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -89,5 +89,5 @@ jspm_packages
 .idea/misc.xml
 .idea/modules.xml
 .idea/typescript-compiler.xml
-src/npm/github/account.json
-src/npm/github/account.json
+/src/api/github/account.js
+/src/api/github/account.ts

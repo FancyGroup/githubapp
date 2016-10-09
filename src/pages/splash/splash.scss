@@ -1,4 +1,4 @@
-@import "../../public/css/main";
+@import "../../public/css/main.scss";
 
 $splash: "splash";
 
@@ -7,6 +7,7 @@ $splash: "splash";
   @include flex-hvc();
   height: 100%;
   background-color: #56abe4;
+
   &-img {
     width: 220px;
     height: 220px;

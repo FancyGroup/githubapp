@@ -1,0 +1,12 @@
+<link rel="stylesheet" href="profile.scss">
+<view class="profile">
+    <view class="profile-bg">
+        <image class="profile-wallpaper" mode="center" src="http://imgsrc.baidu.com/forum/w%3D580/sign=9785e26feb50352ab16125006342fb1a/2005a8014c086e06b0e3d29300087bf40bd1cb38.jpg"></image>
+    </view>
+    <view class="profile-header">
+        <image class="profile-header-img" src="{{profileVM.avatarUrl}}" background-size="cover"></image>
+    </view>
+    <view class="profile-name">
+
+    </view>
+</view>

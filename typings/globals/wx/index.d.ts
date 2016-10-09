@@ -1,4 +1,4 @@
-declare module  wx {
+declare module wx {
 
     /**
      * 发起的是https请求。一个微信小程序，同时只能有5个网络请求连接
@@ -811,6 +811,10 @@ declare module  wx {
         /**接口调用结束的回调函数（调用成功、失败都会执行）*/
         complete?: Function;
     }): void;
+}
+
+declare module "labrador" {
+    export = wx;
 }
 
 interface IAppConfigs {

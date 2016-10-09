@@ -3,10 +3,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height:  100%;
-    background-color: #56abe4;
-}
-.splash-img{
+  height: 100%;
+  background-color: #56abe4; }
+  .splash-img {
     width: 220px;
-    height: 220px;
-}
+    height: 220px; }

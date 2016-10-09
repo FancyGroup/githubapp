@@ -19,6 +19,8 @@ function stripModule(preprocessOpts) {
         var content = pp.preprocess(file.contents.toString(), preprocessOpts || {});
         var split = "[function(require,module,exports){";
         var i = content.lastIndexOf('[function(require,module,exports){');
+        //         content.replace(/function\(require,module,exports\)\{\n\"use strict\"/gm,`[function(require){
+        // "use strict"`)
         if (i != -1) {
             content = content.substr(0, i) + '[function(require){' + content.substr(i + split.length);
         }

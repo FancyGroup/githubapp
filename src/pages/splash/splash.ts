@@ -1,15 +1,13 @@
 import animation = wx.animation;
 import {Github} from '../../npm/index';
-import {PageConfigs} from "../../api/wx/public";
 interface IData {
     splashAnimation:any
 }
 
-class Splash extends PageConfigs<IData> implements IPageConfigs<IData> {
+class Splash implements IPageConfigs<IData> {
     public data:IData;
 
     public constructor() {
-        super();
         this.data = {
             splashAnimation: {}
         } as IData;
@@ -21,15 +19,16 @@ class Splash extends PageConfigs<IData> implements IPageConfigs<IData> {
     }
 
     public onShow() {
+        const self = this;
         setTimeout(()=> {
             const animation = wx.createAnimation({
                 duration: 10000,
                 timingFunction: 'ease-out',
             });
             animation.scale(1.5, 1.5).step();
-            this.setData({
+            self.setData({
                 splashAnimation: animation.export() as animation
-            } as IData);
+            });
         }, 500);
     }
 }

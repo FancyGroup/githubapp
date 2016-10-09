@@ -13,6 +13,8 @@
     "github-api": "^2.3.0",
     "gulp": "^3.9.1",
     "gulp-browserify": "^0.5.1",
+    "gulp-ext-replace": "^0.3.0",
+    "gulp-sass": "^2.3.2",
     "gulp-sequence": "^0.4.6",
     "gulp-typescript": "^3.0.1",
     "gulp-watch": "^4.3.10",
@@ -25,7 +27,8 @@
     "wx-compile-key": "^1.0.3"
   },
   "dependencies": {
-    "whatwg-fetch": "^1.0.0"
+    "es6-promise": "^4.0.5",
+    "labrador": "^0.2.3"
   },
   "module-inlinify": {
     "include": "*.inline.js"
